@@ -56,7 +56,7 @@ function Home() {
           const { data } = await api.get(`/api-animesbr-10.php?letra=${query}`);
 
           if (Array.isArray(data)) {
-            setAnimesSearch(data);
+            setAnimesSearch(data.slice(0, 20));
           }
 
           if (data === null) {
