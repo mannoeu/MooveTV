@@ -131,7 +131,7 @@ function Home() {
         {animesSearch?.length > 0 ? (
           <S.Results>
             <S.TitleCategory>
-              <h2>Resultados da busca</h2>
+              <h2>{animesSearch.length} resultados de busca</h2>
             </S.TitleCategory>
             <S.SliderContainer>
               <Carousel>
