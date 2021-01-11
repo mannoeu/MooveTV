@@ -56,6 +56,6 @@ npm run build
   Open Source
 </h2>
 <p align="center">
-  <sub>Copyright © 2020-present, Emmanuel Messias.</sub>
+  <sub>Copyright © 2021-present, Emmanuel Messias.</sub>
 </p>
 <p align="center">MooveTV <a href="https://github.com/mannoeu/MooveTV/blob/master/LICENSE.md">is MIT licensed 💖</a></p>
