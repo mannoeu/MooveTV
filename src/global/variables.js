@@ -1,13 +1,11 @@
 const variables = {
   /* Colors */
-  bg_dark: "#1B1B1B",
+  bg_dark: "#18192D",
 
-  neon_red: "#f83600",
-  neon_blue: "#03F2F5",
+  neon_red: "#FF657F",
   neon_yellow: "#f9d423",
-  neon_green: "#92fe9d",
 
-  white: "#fff",
+  white: "#EBE7E7",
   black: "#000",
   grey1: "#868f96",
   grey2: "#596164",

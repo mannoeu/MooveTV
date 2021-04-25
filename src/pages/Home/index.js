@@ -4,6 +4,7 @@ import { api } from "../../services/api";
 import { useLocation, useHistory } from "react-router-dom";
 
 import Carousel from "../../components/Carousel";
+/* import MooveTvLogo from "../../assets/logo.png"; */
 
 import * as S from "./styles";
 
@@ -112,6 +113,7 @@ function Home() {
     <S.Container>
       <S.Page>
         <S.Hero>
+          {/*  <img src={MooveTvLogo} alt="MooveTV" /> */}
           <h2>Assista aos melhores animes</h2>
           <span>Pesquise por algum título</span>
         </S.Hero>
@@ -173,7 +175,7 @@ function Home() {
             </S.SliderContainer>
 
             <S.TitleCategory>
-              <h2>Lançamentos</h2>
+              <h2>Lancamentos</h2>
             </S.TitleCategory>
             <S.SliderContainer>
               <Carousel>

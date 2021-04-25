@@ -1,16 +1,22 @@
 import styled from "styled-components";
 import variables from "../../global/variables";
+import background from "../../assets/bg.jpg";
 
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: ${variables.bg_dark};
+  background-color: ${variables.bg_dark};
+  background-image: ${`url(${background})`};
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 `;
 
 export const VideoWrapper = styled.div`
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.77);
+  /*   background: rgba(0, 0, 0, 0.77); */
   display: flex;
   justify-content: center;
   position: relative;

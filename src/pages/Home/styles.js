@@ -2,12 +2,18 @@ import styled from "styled-components";
 import variables from "../../global/variables";
 
 import defaultImg from "../../assets/default.png";
+import background from "../../assets/bg.jpg";
 
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: ${variables.bg_dark};
+  background-color: ${variables.bg_dark};
   padding: ${variables.space};
+  background-image: ${`url(${background})`};
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 `;
 
 export const Page = styled.section`
@@ -26,6 +32,11 @@ export const Hero = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  > img {
+    max-width: 200px;
+    width: 100%;
+  }
 
   h2 {
     font-size: ${variables.titleXl};
@@ -95,12 +106,29 @@ export const Clear = styled.div`
   margin-top: ${variables.space};
 
   span {
-    padding: ${variables.spaceXs};
+    font-size: 12px;
+    padding: ${variables.spaceXs} ${variables.spaceSm};
     display: block;
+
     color: ${variables.white};
-    background: ${variables.neon_yellow};
+    border: 1px solid ${variables.white};
+    background: ${variables.bg_dark};
+
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:active) {
+      color: ${variables.bg_dark};
+      background: ${variables.white};
+      border: 1px solid ${variables.white};
+    }
+
+    &:active {
+      color: ${variables.white};
+      background: ${variables.black};
+      border: 1px solid ${variables.black};
+    }
   }
 `;
 
@@ -142,9 +170,13 @@ export const SliderCard = styled.div`
   cursor: pointer;
   transition: all 0.2s ease-out;
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
 
   background: ${(props) =>
     props.bgURL ? `url(${props.bgURL})` : `url(${defaultImg})`};
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: darken;
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -166,6 +198,8 @@ export const SliderCard = styled.div`
 
   &:hover {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+
+    background-blend-mode: lighten;
   }
   &:hover > span {
     transform: translateY(0);

@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import variables from "../../global/variables";
+import background from "../../assets/bg.jpg";
 
 import { FiArrowLeft } from "react-icons/fi";
 
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background: ${variables.bg_dark};
+  background-color: ${variables.bg_dark};
   padding: ${variables.space};
   position: relative;
+  background-image: ${`url(${background})`};
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
 `;
 
 export const GoBack = styled.div`

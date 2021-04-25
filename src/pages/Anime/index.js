@@ -46,7 +46,7 @@ function Anime() {
   }
 
   function handleGoBack() {
-    history.push("/");
+    history.goBack();
   }
 
   return (
