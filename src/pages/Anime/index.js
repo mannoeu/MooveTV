@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { api } from "../../services/api";
 import { useParams, useHistory } from "react-router-dom";
-
+import SwitchTheme from "../../components/SwitchTheme";
 import * as S from "./styles";
 
 function Anime() {
@@ -51,6 +51,7 @@ function Anime() {
 
   return (
     <S.Container>
+      <SwitchTheme />
       <S.GoBack onClick={handleGoBack}>
         <S.IconGoBack />
       </S.GoBack>

@@ -1,19 +1,20 @@
 import styled from "styled-components";
 import variables from "../../global/variables";
 
-import defaultImg from "../../assets/default.png";
-import background from "../../assets/bg.jpg";
+import defaultImg from "../../assets/default.jfif";
+import background from "../../assets/bg.jfif";
 
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-color: ${variables.bg_dark};
+  background-color: ${(props) => props.theme.colors.background};
   padding: ${variables.space};
   background-image: ${`url(${background})`};
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+  background-blend-mode: ${(props) =>
+    props.theme.title === "light" ? "overlay" : "multiply"};
 `;
 
 export const Page = styled.section`
@@ -40,11 +41,11 @@ export const Hero = styled.header`
 
   h2 {
     font-size: ${variables.titleXl};
-    color: ${variables.neon_red};
+    color: ${(props) => props.theme.colors.primary};
   }
   span {
     font-size: ${variables.textXlg};
-    color: ${variables.white};
+    color: ${(props) => props.theme.colors.text};
     letter-spacing: ${variables.textSpacingMd};
   }
 `;
@@ -63,7 +64,8 @@ export const SearchBox = styled.form`
     max-width: 500px;
     width: 100%;
     border: none;
-    background: ${variables.white};
+    background: ${(props) => props.theme.colors.searchBoxBg};
+    color: ${(props) => props.theme.colors.textSearchBox};
     padding: ${variables.spaceSm} ${variables.space};
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -89,7 +91,7 @@ export const SearchBox = styled.form`
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     border: none;
-    border-left: 1px solid ${variables.bg_dark};
+    border-left: 1px solid ${(props) => props.theme.colors.text};
     color: ${variables.white};
 
     font-weight: bold;

@@ -1,20 +1,21 @@
 import styled from "styled-components";
 import variables from "../../global/variables";
-import background from "../../assets/bg.jpg";
+import background from "../../assets/bg.jfif";
 
 import { FiArrowLeft } from "react-icons/fi";
 
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-color: ${variables.bg_dark};
+  background-color: ${(props) => props.theme.colors.background};
   padding: ${variables.space};
   position: relative;
   background-image: ${`url(${background})`};
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+  background-blend-mode: ${(props) =>
+    props.theme.title === "light" ? "overlay" : "multiply"};
 `;
 
 export const GoBack = styled.div`
@@ -27,8 +28,8 @@ export const GoBack = styled.div`
   height: 40px;
   background-image: linear-gradient(
     to right,
-    ${variables.neon_red} 0%,
-    ${variables.neon_yellow} 100%
+    ${(props) => props.theme.colors.primary} 0%,
+    ${(props) => props.theme.colors.secondary} 100%
   );
 
   display: grid;
@@ -100,12 +101,12 @@ export const Hero = styled.header`
 
   h2 {
     font-size: ${variables.titleSm};
-    color: ${variables.neon_red};
+    color: ${(props) => props.theme.colors.primary};
   }
   span {
     font-size: ${variables.textSm};
     max-width: 700px;
-    color: ${variables.white};
+    color: ${(props) => props.theme.colors.text};
     letter-spacing: ${variables.textSpacingMd};
   }
 
@@ -125,7 +126,7 @@ export const Footer = styled.footer`
   }
   p {
     background: ${variables.neon_red};
-    color: ${variables.white};
+    color: ${(props) => props.theme.colors.text};
     font-size: ${variables.textSm};
     border-radius: 5px;
     padding: 0 5px;
@@ -151,15 +152,14 @@ export const ListEpisodes = styled.ul`
 export const EpisodeItem = styled.li`
   padding: ${variables.spaceSm};
   margin: ${variables.spaceXs} 0;
-  background: ${(props) =>
-    props.watched ? variables.neon_red : variables.grey2};
+  background: ${variables.grey2};
   color: ${variables.white};
   border-radius: 8px;
   cursor: pointer;
 `;
 
 export const TitleCategory = styled.div`
-  color: ${variables.white};
+  color: ${(props) => props.theme.colors.text};
   display: flex;
   align-items: center;
 

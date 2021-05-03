@@ -4,7 +4,7 @@ import { api } from "../../services/api";
 import { useLocation, useHistory } from "react-router-dom";
 
 import Carousel from "../../components/Carousel";
-/* import MooveTvLogo from "../../assets/logo.png"; */
+import SwitchTheme from "../../components/SwitchTheme";
 
 import * as S from "./styles";
 
@@ -111,6 +111,7 @@ function Home() {
 
   return (
     <S.Container>
+      <SwitchTheme />
       <S.Page>
         <S.Hero>
           {/*  <img src={MooveTvLogo} alt="MooveTV" /> */}

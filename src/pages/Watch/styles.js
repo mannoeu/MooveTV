@@ -1,22 +1,22 @@
 import styled from "styled-components";
 import variables from "../../global/variables";
-import background from "../../assets/bg.jpg";
+import background from "../../assets/bg.jfif";
 
 export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-color: ${variables.bg_dark};
+  background-color: ${(props) => props.theme.colors.background};
   background-image: ${`url(${background})`};
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+  background-blend-mode: ${(props) =>
+    props.theme.title === "light" ? "overlay" : "multiply"};
 `;
 
 export const VideoWrapper = styled.div`
   width: 100%;
   height: 100vh;
-  /*   background: rgba(0, 0, 0, 0.77); */
   display: flex;
   justify-content: center;
   position: relative;
@@ -26,7 +26,7 @@ export const VideoWrapper = styled.div`
     right: 40px;
     top: 40px;
     cursor: pointer;
-    color: #fff;
+    color: ${(props) => props.theme.colors.text};
     padding: 5px;
     z-index: 100;
     opacity: 0;
@@ -62,7 +62,7 @@ export const Name = styled.p`
   left: 40px;
   top: 40px;
   cursor: pointer;
-  color: #fff;
+  color: ${(props) => props.theme.colors.text};
   z-index: 100;
   max-width: 470px;
   opacity: 0;
