@@ -23,6 +23,10 @@
 <br>
 <br>
 
+## Importante ⚠️
+
+O serviço que disponibilizava os animes adicionou uma proteção de segurança e com isso não é mais possível assistir aos animes :( R.I.P
+
 ## Como clonar este projeto
 
 ### 1. Clone o repositório
