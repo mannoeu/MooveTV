@@ -15,7 +15,7 @@ function Anime() {
   useEffect(() => {
     async function getDetails() {
       try {
-        const { data } = await api.get(`/api-animesbr-10.php?info=${id}`);
+        const { data } = await api.get(`/play-api.php?info=${id}`);
         setDetails(data);
       } catch (err) {
         console.log("Err on get anime details", err);
@@ -24,7 +24,7 @@ function Anime() {
 
     async function getAllEpisodes() {
       try {
-        const { data } = await api.get(`/api-animesbr-10.php?cat_id=${id}`);
+        const { data } = await api.get(`/play-api.php?cat_id=${id}`);
 
         console.log(data);
         setEpisodes(data);

@@ -14,9 +14,7 @@ function Watch() {
   useEffect(() => {
     async function getCurrentEpisode() {
       try {
-        const { data } = await api.get(
-          `/api-animesbr-10.php?episodios=${videoId}`
-        );
+        const { data } = await api.get(`/play-api.php?episodios=${videoId}`);
         console.log(data);
         setCurrentEpisode(data);
       } catch (err) {

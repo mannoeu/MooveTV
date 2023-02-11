@@ -2,7 +2,7 @@ import axios from "axios";
 import { selectUserAgent } from "../utils/agent";
 
 export const api = axios.create({
-  baseURL: "https://appanimeplus.tk/play-api.php",
+  baseURL: "https://appanimeplus.tk",
   headers: {
     "Content-type": "application/json",
   },
